@@ -1,0 +1,17 @@
+{
+  "type": "component",
+  "metadata": {},
+  "schema": {
+    "name": "budibase-component",
+    "friendlyName": "budibase-component",
+    "description": "An amazing Budibase component!",
+    "icon": "Text",
+    "settings": [
+      {
+        "type": "text",
+        "key": "text",
+        "label": "Text"
+      }
+    ]
+  }
+}

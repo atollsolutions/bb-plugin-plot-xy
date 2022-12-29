@@ -1,0 +1,16 @@
+Budibase Error
+The BB_ADMIN_USER_EMAIL variable is not set. Defaulting to a blank string.
+The BB_ADMIN_USER_PASSWORD variable is not set. Defaulting to a blank string.
+The PLUGINS_DIR variable is not set. Defaulting to a blank string.
+Creating bb_assignment_watchtower-service_1 ... 
+Creating bb_assignment_couchdb-service_1    ... 
+Creating bb_assignment_redis-service_1      ... 
+Creating bb_assignment_minio-service_1      ... 
+[1A[2KCreating bb_assignment_minio-service_1      ... [32mdone[0m[1B[2A[2KCreating bb_assignment_redis-service_1      ... [32mdone[0m[2B[3A[2KCreating bb_assignment_couchdb-service_1    ... [32mdone[0m[3BCreating bb_assignment_couch-init_1         ... 
+[5A[2KCreating bb_assignment_watchtower-service_1 ... [32mdone[0m[5B[1A[2KCreating bb_assignment_couch-init_1         ... [32mdone[0m[1BCreating bbworker                           ... 
+[1A[2KCreating bbworker                           ... [32mdone[0m[1BCreating bbapps                             ... 
+[1A[2KCreating bbapps                             ... [31merror[0m[1B
+ERROR: for bbapps  Cannot start service app-service: error while creating mount source path '/some/path/to/plugins': mkdir /some: read-only file system
+
+ERROR: for app-service  Cannot start service app-service: error while creating mount source path '/some/path/to/plugins': mkdir /some: read-only file system
+Encountered errors while bringing up the project.
