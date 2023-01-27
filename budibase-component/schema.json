@@ -7,11 +7,38 @@
     "description": "An amazing Budibase component!",
     "icon": "Text",
     "settings": [
+      
+      {
+        "type": "dataProvider",
+        "label": "New Data provider",
+        "key": "dataProvider",
+        "required": true
+      },
       {
         "type": "text",
-        "key": "text",
-        "label": "Text"
+        "label": "Steps on x axis",
+        "key": "nodx",
+        "required": true
+      },
+      {
+        "type": "text",
+        "label": "Steps on y axis",
+        "key": "nody",
+        "required": true
+      },
+      {
+        "type": "text",
+        "label": "X axis column",
+        "key": "xaxis",
+        "required": true
+      },
+      {
+        "type": "text",
+        "label": "Y axis column",
+        "key": "yaxis",
+        "required": true
       }
+
     ]
   }
 }

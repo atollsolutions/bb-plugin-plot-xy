@@ -1,30 +1,35 @@
 <script>
 	import { onMount } from 'svelte';
 	import { scaleLinear } from 'd3-scale';
+    import { scale } from 'svelte/types/runtime/transition';
 
 	export let points;
-
+	export let scale_ob;
 	let svg;
 	let width = 500;
 	let height = 250;
 
 	const padding = { top: 20, right: 20, bottom: 20, left: 25 };
-
+	console.log(scale_ob)
 	$: xScale = scaleLinear()
-		.domain([0, 20])
+		.domain([scale_ob['min_x'], scale_ob['max_x']])
 		.range([padding.left, width - padding.right]);
 
 	$: yScale = scaleLinear()
-		.domain([0, 12])
+		.domain([scale_ob['min_y'], scale_ob['max_y']])
 		.range([height - padding.bottom, padding.top]);
+	
+	let xTicks = []
 
-	$: xTicks = width > 180 ?
-		[0, 4, 8, 12, 16, 20] :
-		[0, 10, 20];
-
-	$: yTicks = height > 180 ?
-		[0, 2, 4, 6, 8, 10, 12] :
-		[0, 4, 8, 12];
+	let yTicks = []
+	for (let i=scale_ob['min_x'];i<=scale_ob['max_x'];i+=parseFloat(scale_ob['nodx'])){
+		
+		xTicks.push(i);
+	}
+	for (let i=scale_ob['min_y'];i<=scale_ob['max_y'];i+=parseFloat(scale_ob['nody'])){
+		
+		yTicks.push(i);
+	}
 
 	onMount(resize);
 
@@ -63,8 +68,8 @@
 
 <style>
 	svg {
-		width: 90%;
-		height: 90%;
+		width: 100%;
+		height: 100%;
 		float: left;
 	}
 

@@ -1,16 +1,56 @@
 Budibase Error
-The BB_ADMIN_USER_EMAIL variable is not set. Defaulting to a blank string.
-The BB_ADMIN_USER_PASSWORD variable is not set. Defaulting to a blank string.
-The PLUGINS_DIR variable is not set. Defaulting to a blank string.
-Creating bb_assignment_watchtower-service_1 ... 
-Creating bb_assignment_couchdb-service_1    ... 
-Creating bb_assignment_redis-service_1      ... 
-Creating bb_assignment_minio-service_1      ... 
-[1A[2KCreating bb_assignment_minio-service_1      ... [32mdone[0m[1B[2A[2KCreating bb_assignment_redis-service_1      ... [32mdone[0m[2B[3A[2KCreating bb_assignment_couchdb-service_1    ... [32mdone[0m[3BCreating bb_assignment_couch-init_1         ... 
-[5A[2KCreating bb_assignment_watchtower-service_1 ... [32mdone[0m[5B[1A[2KCreating bb_assignment_couch-init_1         ... [32mdone[0m[1BCreating bbworker                           ... 
-[1A[2KCreating bbworker                           ... [32mdone[0m[1BCreating bbapps                             ... 
-[1A[2KCreating bbapps                             ... [31merror[0m[1B
-ERROR: for bbapps  Cannot start service app-service: error while creating mount source path '/some/path/to/plugins': mkdir /some: read-only file system
+[29992] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "urllib3/connectionpool.py", line 677, in urlopen
+  File "urllib3/connectionpool.py", line 392, in _make_request
+  File "http/client.py", line 1252, in request
+  File "http/client.py", line 1298, in _send_request
+  File "http/client.py", line 1247, in endheaders
+  File "http/client.py", line 1026, in _send_output
+  File "http/client.py", line 966, in send
+  File "docker/transport/unixconn.py", line 43, in connect
+ConnectionRefusedError: [Errno 111] Connection refused
 
-ERROR: for app-service  Cannot start service app-service: error while creating mount source path '/some/path/to/plugins': mkdir /some: read-only file system
-Encountered errors while bringing up the project.
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "requests/adapters.py", line 449, in send
+  File "urllib3/connectionpool.py", line 727, in urlopen
+  File "urllib3/util/retry.py", line 403, in increment
+  File "urllib3/packages/six.py", line 734, in reraise
+  File "urllib3/connectionpool.py", line 677, in urlopen
+  File "urllib3/connectionpool.py", line 392, in _make_request
+  File "http/client.py", line 1252, in request
+  File "http/client.py", line 1298, in _send_request
+  File "http/client.py", line 1247, in endheaders
+  File "http/client.py", line 1026, in _send_output
+  File "http/client.py", line 966, in send
+  File "docker/transport/unixconn.py", line 43, in connect
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionRefusedError(111, 'Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "docker/api/client.py", line 205, in _retrieve_server_version
+  File "docker/api/daemon.py", line 181, in version
+  File "docker/utils/decorators.py", line 46, in inner
+  File "docker/api/client.py", line 228, in _get
+  File "requests/sessions.py", line 543, in get
+  File "requests/sessions.py", line 530, in request
+  File "requests/sessions.py", line 643, in send
+  File "requests/adapters.py", line 498, in send
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionRefusedError(111, 'Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 3, in <module>
+  File "compose/cli/main.py", line 67, in main
+  File "compose/cli/main.py", line 123, in perform_command
+  File "compose/cli/command.py", line 69, in project_from_options
+  File "compose/cli/command.py", line 132, in get_project
+  File "compose/cli/docker_client.py", line 43, in get_client
+  File "compose/cli/docker_client.py", line 170, in docker_client
+  File "docker/api/client.py", line 188, in __init__
+  File "docker/api/client.py", line 213, in _retrieve_server_version
+docker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', ConnectionRefusedError(111, 'Connection refused'))
