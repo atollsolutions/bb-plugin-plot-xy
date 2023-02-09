@@ -1,1 +1,0 @@
-# bb-plugin-plot-xy

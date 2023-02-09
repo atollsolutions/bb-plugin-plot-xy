@@ -5,6 +5,7 @@
 
 	export let points;
 	export let scale_ob;
+
 	let svg;
 	let width = 500;
 	let height = 250;
