@@ -24,6 +24,41 @@
        
       },
       {
+        "type": "number",
+        "key": "interval",
+        "label": "Interval (in seconds)",
+        "min": 1,
+        "required": true
+      },
+      {
+        "type": "dataProvider",
+        "label": "Dynamic Data provider",
+        "key": "dataProviderdynamic",
+        "required": true
+        
+      },
+      {
+        "type": "boolean",
+        "key": "display",
+        "label": "Display component in frontend",
+        "defaultValue": true
+      },
+      {
+        "type": "text",
+        "key": "text",
+        "label": "Text to display",
+        "defaultValue": "Interval",
+        "dependsOn": {
+          "setting": "display",
+          "value": true
+        }
+      },
+      {
+        "type": "event",
+        "key": "trigger",
+        "label": "On interval"
+      },
+      {
         "type": "text",
         "label": "Steps on y axis",
         "key": "nody",

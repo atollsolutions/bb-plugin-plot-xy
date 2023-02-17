@@ -1,13 +1,18 @@
 <script>
   import { getContext } from "svelte"
+  import Interval from "./Internal.svelte";
   export let dataProvider;
   export let nodx;
   export let nody;
   export let xaxis;
   export let yaxis;
-  
+  export let trigger;
+  export let interval;
+  export let display;
+  export let text;
   export let max_x,max_y,min_x,min_y;
   let scale_object;
+
   const { styleable } = getContext("sdk")
   const component = getContext("component")
 	import Scatterplot from "./Axis.svelte";
@@ -59,6 +64,9 @@
 	<Scatterplot scale_ob={scale_object}  points={dataa.a} />
 	
 </div>
+<div use:styleable={$component.styles}>
+	<Interval on:trigger={trigger} interval={interval} display={display} text={text}/>
+  </div>
 
 <style>
 	.chart {
