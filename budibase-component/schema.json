@@ -1,0 +1,88 @@
+{
+  "type": "component",
+  "metadata": {},
+  "schema": {
+    "name": "budibase-component",
+    "friendlyName": "budibase-component",
+    "description": "An amazing Budibase component!",
+    "icon": "Text",
+    "settings": [
+      
+      {
+        "type": "dataProvider",
+        "label": "New Data provider",
+        "key": "dataProvider",
+        "required": true
+        
+      },
+      {
+        "type": "text",
+        "label": "Steps on x axis",
+        "key": "nodx",
+        "required": true,
+        "defaultValue":3
+       
+      },
+     
+      {
+        "type": "number",
+        "key": "interval",
+        "label": "Interval (in seconds)",
+        "min": 1,
+        "required": true
+      },
+      {
+        "type": "dataProvider",
+        "label": "Dynamic Data provider",
+        "key": "dataProviderdynamic",
+        "required": true
+        
+      },
+     
+      {
+        "type": "boolean",
+        "key": "display",
+        "label": "Display component in frontend",
+        "defaultValue": true
+      },
+      {
+        "type": "text",
+        "key": "text",
+        "label": "Text to display",
+        "defaultValue": "Interval",
+        "dependsOn": {
+          "setting": "display",
+          "value": true
+        }
+      },
+      {
+        "type": "event",
+        "key": "trigger",
+        "label": "On interval"
+      },
+      {
+        "type": "text",
+        "label": "Steps on y axis",
+        "key": "nody",
+        "required": true,
+        "defaultValue":3
+      },
+      {
+        "type": "field",
+        "label": "X axis column",
+        "key": "xaxis",
+        "required": true,
+        "defaultValue":"x"
+      },
+      {
+        "type": "field",
+        "label": "Y axis column",
+        "key": "yaxis",
+        "required": true,
+        "defaultValue":"x"
+      }
+      
+
+    ]
+  }
+}

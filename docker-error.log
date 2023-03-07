@@ -1,0 +1,16 @@
+Budibase Error
+The BB_ADMIN_USER_EMAIL variable is not set. Defaulting to a blank string.
+The BB_ADMIN_USER_PASSWORD variable is not set. Defaulting to a blank string.
+bb_assignment_couchdb-service_1 is up-to-date
+bb_assignment_minio-service_1 is up-to-date
+bb_assignment_watchtower-service_1 is up-to-date
+bb_assignment_redis-service_1 is up-to-date
+Starting bb_assignment_couch-init_1 ... 
+[1A[2KStarting bb_assignment_couch-init_1 ... [32mdone[0m[1Bbbworker is up-to-date
+Creating bbapps                     ... 
+[1A[2KCreating bbapps                     ... [32mdone[0m[1BCreating bbproxy                    ... 
+[1A[2KCreating bbproxy                    ... [31merror[0m[1B
+ERROR: for bbproxy  Cannot create container for service proxy-service: Conflict. The container name "/bbproxy" is already in use by container "4fa09f2112e28a9b74457d4c6b90223f59316addd6c1eeb7f96ca0146f9c423b". You have to remove (or rename) that container to be able to reuse that name.
+
+ERROR: for proxy-service  Cannot create container for service proxy-service: Conflict. The container name "/bbproxy" is already in use by container "4fa09f2112e28a9b74457d4c6b90223f59316addd6c1eeb7f96ca0146f9c423b". You have to remove (or rename) that container to be able to reuse that name.
+Encountered errors while bringing up the project.
