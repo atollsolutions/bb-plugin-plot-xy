@@ -4,7 +4,6 @@
 	
 	export let points;
 	export let scale_ob;
-	export let points1;
 
 	let svg;
 	let width = 500;
@@ -35,15 +34,15 @@
 		}
 	}
 
-	onMount(() => {
-		calculateScales();
-		resize();
-	});
+
 
 	afterUpdate(() => {
 		calculateScales();
 	});
-
+	onMount(() => {
+		calculateScales();
+		resize();
+	});
 	onDestroy(() => {
 		xScale = null;
 		yScale = null;
@@ -81,11 +80,7 @@
 
 	{#each points as point}
 		<circle cx='{xScale(point.x)}' cy='{yScale(point.y)}' r='5'/>
-		<title>This point is static</title>
-	{/each}
-	{#each points1 as pointt}
-		<circle class='v1' cx='{xScale(pointt.x)}' cy='{yScale(pointt.y)}' r='5'/>
-		<title>This point is dynamic</title>
+		
 	{/each}
 	{/if}
 </svg>
@@ -102,12 +97,7 @@
 		fill-opacity: 0.6;
 		stroke: rgba(0,0,0,0.5);
 	}
-	.v1 {
-		fill: rgb(20, 40, 129);
 
-		fill-opacity: 0.6;
-		stroke: rgba(0,0,0,0.5);
-	}
 	.tick line {
 		stroke: rgb(1, 4, 14);
 		stroke-dasharray: 2;
