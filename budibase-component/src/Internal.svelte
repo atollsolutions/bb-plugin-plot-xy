@@ -11,8 +11,7 @@
 	export let xaxis;
 	export let yaxis;
 	export let interval;
-	export let display;
-	export let text;
+	
 	export let Data;
 	export let scaleobject1;
 	let Data2 = [];

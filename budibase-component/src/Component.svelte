@@ -1,13 +1,15 @@
 <script>
 	import { getContext } from "svelte"
-
+	import Internal from "./Internal.svelte";
 	export let dataProvider;
-
+	export let dataProviderdynamic;
 	export let nodx;
 	export let nody;
 	export let xaxis;
 	export let yaxis;
-	console.log(dataProvider)
+	export let trigger;
+	export let interval;
+	
 	
 	let max_x,max_y,min_x,min_y;
 	let scale_object;
@@ -16,10 +18,10 @@
 	const component = getContext("component")
 	import Axis from "./Axis.svelte";
 	
-	
 	  
 	let dataa = { a: [] };
 	  console.log(dataProvider)
+	
 	$: if (dataProvider) {
 	  const newData = dataProvider.rows.map(xx => {
 		return {
@@ -30,7 +32,7 @@
   
 	  if (newData.length > 0) {
 		dataa.a = newData;
-	  } 
+	  }
   
 	  max_x = dataa.a[0]['x'];
 	  min_x = dataa.a[0]['x'];
@@ -54,12 +56,13 @@
 		xaxis: xaxis,
 		yaxis: yaxis
 	  };
-	} 
+	}
   </script>
   
   <div class="chart">
-	<Axis points={dataa.a} scale_ob={scale_object} />
+	<Internal on:trigger={trigger} interval={interval} {dataProviderdynamic}  {nodx} {nody} {xaxis} {yaxis} Data={dataa.a} scaleobject1={scale_object}/>
   </div>
+  
   <style>
 	.chart {
 	  width: 100%;
