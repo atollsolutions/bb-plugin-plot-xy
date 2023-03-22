@@ -5,53 +5,15 @@
     "name": "budibase-component",
     "friendlyName": "budibase-component",
     "description": "An amazing Budibase component!",
-    "icon": "Text",
+    "icon": "Menu",
     "settings": [
       
       {
         "type": "dataProvider",
-        "label": "Static Data provider",
+        "label": "Static data provider",
         "key": "dataProvider",
         "required": true
         
-      },
-      {
-        "type": "dataProvider",
-        "label": "Dynamic Data provider",
-        "key": "dataProviderdynamic",
-        "required": true
-        
-      },
-
-      {
-        "type": "number",
-        "key": "interval",
-        "label": "Interval (in seconds)",
-        "min": 1,
-        "required": true
-      },
-     
-     
-      {
-        "type": "event",
-        "key": "trigger",
-        "label": "On interval"
-      },
-      {
-        "type": "text",
-        "label": "Steps on x axis",
-        "key": "nodx",
-        "required": true,
-        "defaultValue":3
-       
-      },
-     
-      {
-        "type": "text",
-        "label": "Steps on y axis",
-        "key": "nody",
-        "required": true,
-        "defaultValue":3
       },
       {
         "type": "text",
@@ -60,32 +22,33 @@
         
       },
       {
-        "type": "field",
-        "label": "Y axis column for dynamic",
-        "key": "yaxisd"
+        "type": "text",
+        "label": "Steps on x axis",
+        "key": "nodx"
         
-        
+       
       },
+      
+     
       {
-        "type": "field",
-        "label": "X axis column for dynamic",
-        "key": "xaxisd"
-        
-        
+        "type": "text",
+        "label": "Steps on y axis",
+        "key": "nody"
+       
       },
       {
         "type": "field",
         "label": "X axis column",
-        "key": "xaxis"
-        
-        
+        "key": "xaxis",
+        "required": true,
+        "defaultValue":"x"
       },
       {
         "type": "field",
         "label": "Y axis column",
-        "key": "yaxis"
-       
-        
+        "key": "yaxis",
+        "required": true,
+        "defaultValue":"y"
       }
       
 
