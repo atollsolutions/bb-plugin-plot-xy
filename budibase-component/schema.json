@@ -15,13 +15,17 @@
         "required": true
         
       },
-      
+      {
+        "type": "text",
+        "label": "Title for the chart",
+        "key": "tc"
+        
+      },
       {
         "type": "text",
         "label": "Steps on x axis",
-        "key": "nodx",
-        "required": true,
-        "defaultValue":3
+        "key": "nodx"
+        
        
       },
       
@@ -29,9 +33,8 @@
       {
         "type": "text",
         "label": "Steps on y axis",
-        "key": "nody",
-        "required": true,
-        "defaultValue":3
+        "key": "nody"
+       
       },
       {
         "type": "field",
