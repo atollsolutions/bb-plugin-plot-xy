@@ -54,18 +54,38 @@
         "defaultValue":3
       },
       {
+        "type": "text",
+        "label": "Title for the chart",
+        "key": "tc"
+        
+      },
+      {
+        "type": "field",
+        "label": "Y axis column for dynamic",
+        "key": "yaxisd"
+        
+        
+      },
+      {
+        "type": "field",
+        "label": "X axis column for dynamic",
+        "key": "xaxisd"
+        
+        
+      },
+      {
         "type": "field",
         "label": "X axis column",
-        "key": "xaxis",
-        "required": true,
-        "defaultValue":"x"
+        "key": "xaxis"
+        
+        
       },
       {
         "type": "field",
         "label": "Y axis column",
-        "key": "yaxis",
-        "required": true,
-        "defaultValue":"x"
+        "key": "yaxis"
+       
+        
       }
       
 

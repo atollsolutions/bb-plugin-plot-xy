@@ -27,7 +27,6 @@
 	
 	
 	$: if (dataProvider) {
-		
 	  const newData = dataProvider.rows.filter(function(xx) {
   if (!xx[xaxis] || !xx[yaxis]) {
     return false; // skip
@@ -38,7 +37,6 @@
 
 		  x: Number(xx[xaxis]),
 		  y: Number(xx[yaxis]),
-		  id:xx.id,
 		}
 	  });
   
