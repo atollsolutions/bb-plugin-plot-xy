@@ -19,11 +19,9 @@
 	const { styleable } = getContext("sdk")
 	const component = getContext("component")
 	import Axis from "./Axis.svelte";
-	
-	
-	  
 	let dataa = { a: [] };
-	  console.log(dataProvider)
+	
+	
 	$: if (dataProvider) {
 	  const newData = dataProvider.rows.filter(function(xx) {
   if (!xx[xaxis] || !xx[yaxis]) {
@@ -39,22 +37,22 @@
   
 	  if (newData.length > 0) {
 		dataa.a = newData;
-	  } 
-  
-	  if( dataa.a.length>0 ){
+	  }
+  if( dataa.a.length>0 ){
 	  max_x = Math.max(max_x, dataa.a[0]['x']);
 	  min_x = Math.min(min_x, dataa.a[0]['x']);
 	  max_y = Math.max(max_y,dataa.a[0]['y']);
 	  min_y = Math.min(min_y, dataa.a[0]['y']);
 	  
 	  for (let i = 1; i < dataa.a.length; i++) {
+		
 		max_x = Math.max(max_x, dataa.a[i]['x']);
 		min_x = Math.min(min_x, dataa.a[i]['x']);
 		max_y = Math.max(max_y, dataa.a[i]['y']);
 		min_y = Math.min(min_y, dataa.a[i]['y']);
+		
 	  }
 	}
-	  
 	  scale_object = {
 		max_x: max_x,
 		max_y: max_y,
@@ -63,9 +61,13 @@
 		nodx: nodx,
 		nody: nody,
 		xaxis: xaxis,
-		yaxis: yaxis
+		yaxis: yaxis,
+		
+	
 	  };
-	} 
+	}
+
+	 
   </script>
   
   <div class="chart">
