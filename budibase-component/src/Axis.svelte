@@ -6,8 +6,8 @@
 	export let scale_ob;
 
 	let svg;
-	let width = 500;
-	let height = 250;
+	let width = '80%';
+	let height = '60%';
 
 	const padding = { top: 20, right: 20, bottom: 5, left: 25 };
 	

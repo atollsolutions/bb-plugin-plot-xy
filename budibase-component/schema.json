@@ -2,8 +2,8 @@
   "type": "component",
   "metadata": {},
   "schema": {
-    "name": "budibase-component",
-    "friendlyName": "budibase-component",
+    "name": "plot-static",
+    "friendlyName": "plot static",
     "description": "An amazing Budibase component!",
     "icon": "Menu",
     "settings": [
@@ -23,7 +23,7 @@
       },
       {
         "type": "text",
-        "label": "Steps on x axis",
+        "label": "Steps on x axis for static",
         "key": "nodx"
         
        
@@ -32,7 +32,7 @@
      
       {
         "type": "text",
-        "label": "Steps on y axis",
+        "label": "Steps on y axis for static",
         "key": "nody"
        
       },
