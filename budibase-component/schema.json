@@ -2,7 +2,7 @@
   "type": "component",
   "metadata": {},
   "schema": {
-    "name": "plot-static",
+    "name": "budibase-component",
     "friendlyName": "plot static",
     "description": "An amazing Budibase component!",
     "icon": "Menu",
