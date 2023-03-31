@@ -1,6 +1,6 @@
 <script>
 	import { getContext, createEventDispatcher, onDestroy } from "svelte";
-	import Internal from "./Internal.svelte";
+	import { onMount, afterUpdate} from 'svelte';
 	import Axis from "./Axis.svelte";
   
 	const dispatch = createEventDispatcher();
@@ -11,38 +11,51 @@
 	export let xaxis;
 	export let yaxis;
 	export let interval;
-	
+	export let xaxisd;
+	export let yaxisd;
+	export let tc;
 	export let Data;
 	export let scaleobject1;
 	let Data2 = [];
 	let scaleObject;
-  
+	let max_x = 10;
+  let max_y = 10;
+  let min_x = 0;
+  let min_y = 0;
+  console.log(scaleobject1)
 	const { styleable } = getContext("sdk")
 	const component = getContext("component")
   
 	let intervalID = null;
-  
+	
 	function updateData() {
+
 		if (dataProviderdynamic) {
-  Data2 = dataProviderdynamic.rows.map(xx => {
+
+  Data2 = dataProviderdynamic.rows.filter(function(xx) {
+  if (!xx[xaxisd] || !xx[yaxisd]) {
+    return false; // skip
+  }
+  return true;
+}).map(xx => {
     return {
-      x: parseFloat(xx[xaxis]),
-      y: parseFloat(xx[yaxis]),
+      x: parseFloat(xx[xaxisd]),
+      y: parseFloat(xx[yaxisd]),
     };
   });
 }
-  
-	  let max_x=Data2[0]['x'];
-	  let min_x=Data2[0]['x'];
-	  let max_y=Data2[0]['y'];
-	  let min_y=Data2[0]['y'];
+if( Data2.length>0 ){
+	  max_x=Data2[0]['x'];
+	  min_x=Data2[0]['x'];
+	  max_y=Data2[0]['y'];
+	  min_y=Data2[0]['y'];
 	  for(let i=1;i<Data2.length;i++){
 		max_x=Math.max(max_x,Data2[i]['x']);
 		min_x=Math.min(min_x,Data2[i]['x']);
 		max_y=Math.max(max_y,Data2[i]['y']);
 		min_y=Math.min(min_y,Data2[i]['y']);
 	  }
-  
+	}
 	  scaleObject={
 		max_x: Math.max(max_x,scaleobject1.max_x),
 		max_y: Math.max(max_y,scaleobject1.max_y),
@@ -51,10 +64,14 @@
 		nodx: nodx,
 		nody: nody,
 		xaxis: xaxis,
-		yaxis: yaxis
+		yaxis: yaxis,
+		xaxisd: xaxisd,
+		yaxisd:yaxisd,
+		tc:tc
 	  };
-	}
-  
+	  console.log(scaleObject)
+	
+}
 	function onTrigger() {
 	  updateData();
 	  dispatch("trigger");
@@ -69,10 +86,13 @@
   
 	  updateData();
 	}
+	afterUpdate(() => {
+		updateData();
+	});
   </script>
   
   <div class="chart">
-	<h1>Canvas</h1>
+	<h1>{tc}</h1>
   
 	<Axis scale_ob={scaleObject} points1={Data2} points={Data} />
   

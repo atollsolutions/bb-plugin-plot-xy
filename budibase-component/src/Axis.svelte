@@ -13,7 +13,7 @@
 	const padding = { top: 20, right: 20, bottom: 5, left: 25 };
 	
 	let xScale, yScale, xTicks, yTicks;
-
+	console.log(scale_ob)
 	function calculateScales() {
 		xScale = scaleLinear()
 			.domain([scale_ob['min_x'], scale_ob['max_x']])
@@ -80,12 +80,16 @@
 	</g>
 
 	{#each points as point}
-		<circle cx='{xScale(point.x)}' cy='{yScale(point.y)}' r='5'/>
-		<title>This point is static</title>
-	{/each}
+  {#if !(isNaN(point.x) || isNaN(point.y))}
+    <circle cx='{xScale(point.x)}' cy='{yScale(point.y)}' r='5'/>
+    <title>This point is static</title>
+  {/if}
+{/each}
 	{#each points1 as pointt}
+	 {#if !(isNaN(pointt.x) || isNaN(pointt.y))}
 		<circle class='v1' cx='{xScale(pointt.x)}' cy='{yScale(pointt.y)}' r='5'/>
 		<title>This point is dynamic</title>
+		{/if}
 	{/each}
 	{/if}
 </svg>

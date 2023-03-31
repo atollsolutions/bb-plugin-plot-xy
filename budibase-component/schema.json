@@ -3,7 +3,7 @@
   "metadata": {},
   "schema": {
     "name": "budibase-component",
-    "friendlyName": "budibase-component",
+    "friendlyName": "plot dynamic",
     "description": "An amazing Budibase component!",
     "icon": "Text",
     "settings": [
@@ -54,19 +54,40 @@
         "defaultValue":3
       },
       {
-        "type": "field",
-        "label": "X axis column",
-        "key": "xaxis",
-        "required": true,
-        "defaultValue":"x"
+        "type": "text",
+        "label": "Title for the chart",
+        "key": "tc"
+        
       },
       {
         "type": "field",
-        "label": "Y axis column",
-        "key": "yaxis",
-        "required": true,
-        "defaultValue":"x"
+        "label": "X axis column for static",
+        "key": "xaxis"
+        
+        
+      },
+      {
+        "type": "field",
+        "label": "Y axis column for static",
+        "key": "yaxis"
+       
+        
+      },
+      {
+        "type": "field",
+        "label": "Y axis column for dynamic",
+        "key": "yaxisd"
+        
+        
+      },
+      {
+        "type": "field",
+        "label": "X axis column for dynamic",
+        "key": "xaxisd"
+        
+        
       }
+    
       
 
     ]
