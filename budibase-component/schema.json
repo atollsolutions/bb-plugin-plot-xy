@@ -2,56 +2,39 @@
   "type": "component",
   "metadata": {},
   "schema": {
-    "name": "budibase-component",
-    "friendlyName": "budibase-component",
+    "name": "plot-static",
+    "friendlyName": "plot static",
     "description": "An amazing Budibase component!",
-    "icon": "Text",
+    "icon": "Menu",
     "settings": [
       
       {
         "type": "dataProvider",
-        "label": "Static Data provider",
+        "label": "Static data provider",
         "key": "dataProvider",
         "required": true
         
       },
       {
-        "type": "dataProvider",
-        "label": "Dynamic Data provider",
-        "key": "dataProviderdynamic",
-        "required": true
+        "type": "text",
+        "label": "Title for the chart",
+        "key": "tc"
         
       },
-
-      {
-        "type": "number",
-        "key": "interval",
-        "label": "Interval (in seconds)",
-        "min": 1,
-        "required": true
-      },
-     
-     
-      {
-        "type": "event",
-        "key": "trigger",
-        "label": "On interval"
-      },
       {
         "type": "text",
-        "label": "Steps on x axis",
-        "key": "nodx",
-        "required": true,
-        "defaultValue":3
+        "label": "Steps on x axis for static",
+        "key": "nodx"
+        
        
       },
+      
      
       {
         "type": "text",
-        "label": "Steps on y axis",
-        "key": "nody",
-        "required": true,
-        "defaultValue":3
+        "label": "Steps on y axis for static",
+        "key": "nody"
+       
       },
       {
         "type": "field",
@@ -65,7 +48,7 @@
         "label": "Y axis column",
         "key": "yaxis",
         "required": true,
-        "defaultValue":"x"
+        "defaultValue":"y"
       }
       
 
