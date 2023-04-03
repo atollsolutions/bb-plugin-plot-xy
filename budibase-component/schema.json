@@ -2,56 +2,18 @@
   "type": "component",
   "metadata": {},
   "schema": {
-    "name": "budibase-component",
-    "friendlyName": "plot dynamic",
+    "name": "plot-xy-static",
+    "friendlyName": "plot static",
     "description": "An amazing Budibase component!",
-    "icon": "Text",
+    "icon": "Menu",
     "settings": [
       
       {
         "type": "dataProvider",
-        "label": "Static Data provider",
+        "label": "Static data provider",
         "key": "dataProvider",
         "required": true
         
-      },
-      {
-        "type": "dataProvider",
-        "label": "Dynamic Data provider",
-        "key": "dataProviderdynamic",
-        "required": true
-        
-      },
-
-      {
-        "type": "number",
-        "key": "interval",
-        "label": "Interval (in seconds)",
-        "min": 1,
-        "required": true
-      },
-     
-     
-      {
-        "type": "event",
-        "key": "trigger",
-        "label": "On interval"
-      },
-      {
-        "type": "text",
-        "label": "Steps on x axis",
-        "key": "nodx",
-        "required": true,
-        "defaultValue":3
-       
-      },
-     
-      {
-        "type": "text",
-        "label": "Steps on y axis",
-        "key": "nody",
-        "required": true,
-        "defaultValue":3
       },
       {
         "type": "text",
@@ -60,34 +22,34 @@
         
       },
       {
-        "type": "field",
-        "label": "X axis column for static",
-        "key": "xaxis"
+        "type": "text",
+        "label": "Steps on x axis for static",
+        "key": "nodx"
         
-        
-      },
-      {
-        "type": "field",
-        "label": "Y axis column for static",
-        "key": "yaxis"
        
-        
+      },
+      
+     
+      {
+        "type": "text",
+        "label": "Steps on y axis for static",
+        "key": "nody"
+       
       },
       {
         "type": "field",
-        "label": "Y axis column for dynamic",
-        "key": "yaxisd"
-        
-        
+        "label": "X axis column",
+        "key": "xaxis",
+        "required": true,
+        "defaultValue":"x"
       },
       {
         "type": "field",
-        "label": "X axis column for dynamic",
-        "key": "xaxisd"
-        
-        
+        "label": "Y axis column",
+        "key": "yaxis",
+        "required": true,
+        "defaultValue":"y"
       }
-    
       
 
     ]

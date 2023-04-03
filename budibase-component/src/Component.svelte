@@ -1,18 +1,14 @@
 <script>
 	import { getContext } from "svelte"
-	import { onMount, afterUpdate, onDestroy } from 'svelte';
-	import Internal from "./Internal.svelte";
+
 	export let dataProvider;
-	export let dataProviderdynamic;
+
 	export let nodx;
 	export let nody;
 	export let xaxis;
 	export let yaxis;
-	export let trigger;
-	export let interval;
-	export let xaxisd;
-	export let yaxisd;
 	export let tc;
+	console.log(dataProvider)
 	
 	let max_x = 10;
   let max_y = 10;
@@ -34,7 +30,6 @@
   return true;
 }).map(xx => {
 		return {
-
 		  x: Number(xx[xaxis]),
 		  y: Number(xx[yaxis]),
 		}
@@ -67,18 +62,18 @@
 		nody: nody,
 		xaxis: xaxis,
 		yaxis: yaxis,
-		xaxisd:xaxisd,
-		yaxisd:yaxisd,
-		tc:tc
+		
+	
 	  };
 	}
 
+	 
   </script>
   
   <div class="chart">
-	<Internal on:trigger={trigger} interval={interval} {dataProviderdynamic}  {nodx} {nody} {xaxis} {yaxis} {xaxisd} {yaxisd} {tc} Data={dataa.a} scaleobject1={scale_object}/>
+	<h1>{tc}</h1>
+	<Axis points={dataa.a} scale_ob={scale_object} />
   </div>
-  
   <style>
 	.chart {
 	  width: 100%;

@@ -4,16 +4,15 @@
 	
 	export let points;
 	export let scale_ob;
-	export let points1;
 
 	let svg;
-	let width = 500;
-	let height = 250;
+	let width = '80%';
+	let height = '60%';
 
 	const padding = { top: 20, right: 20, bottom: 5, left: 25 };
 	
 	let xScale, yScale, xTicks, yTicks;
-	console.log(scale_ob)
+
 	function calculateScales() {
 		xScale = scaleLinear()
 			.domain([scale_ob['min_x'], scale_ob['max_x']])
@@ -35,15 +34,15 @@
 		}
 	}
 
-	onMount(() => {
-		calculateScales();
-		resize();
-	});
+
 
 	afterUpdate(() => {
 		calculateScales();
 	});
-
+	onMount(() => {
+		calculateScales();
+		resize();
+	});
 	onDestroy(() => {
 		xScale = null;
 		yScale = null;
@@ -80,16 +79,8 @@
 	</g>
 
 	{#each points as point}
-  {#if !(isNaN(point.x) || isNaN(point.y))}
-    <circle cx='{xScale(point.x)}' cy='{yScale(point.y)}' r='5'/>
-    <title>This point is static</title>
-  {/if}
-{/each}
-	{#each points1 as pointt}
-	 {#if !(isNaN(pointt.x) || isNaN(pointt.y))}
-		<circle class='v1' cx='{xScale(pointt.x)}' cy='{yScale(pointt.y)}' r='5'/>
-		<title>This point is dynamic</title>
-		{/if}
+		<circle cx='{xScale(point.x)}' cy='{yScale(point.y)}' r='5'/>
+		
 	{/each}
 	{/if}
 </svg>
@@ -106,12 +97,7 @@
 		fill-opacity: 0.6;
 		stroke: rgba(0,0,0,0.5);
 	}
-	.v1 {
-		fill: rgb(20, 40, 129);
 
-		fill-opacity: 0.6;
-		stroke: rgba(0,0,0,0.5);
-	}
 	.tick line {
 		stroke: rgb(1, 4, 14);
 		stroke-dasharray: 2;
