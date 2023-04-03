@@ -37,8 +37,7 @@
   
 	  if (newData.length > 0) {
 		dataa.a = newData;
-	  }
-  if( dataa.a.length>0 ){
+	  
 	  max_x = Math.max(max_x, dataa.a[0]['x']);
 	  min_x = Math.min(min_x, dataa.a[0]['x']);
 	  max_y = Math.max(max_y,dataa.a[0]['y']);
