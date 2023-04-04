@@ -7,7 +7,7 @@
 
 	let svg;
 	let size = 0.4;
-	let width,height;
+	let width,height,svgSize;
 
 	const padding = { top: 20, right: 20, bottom: 5, left: 25 };
 	
@@ -15,7 +15,7 @@
 	
 	function calculateScales() {
 		let range = Math.max(scale_ob['max_x'] - scale_ob['min_x'], scale_ob['max_y'] - scale_ob['min_y']);
-    let svgSize = window.innerWidth * size;
+    	svgSize = window.innerWidth * size;
 		width = svgSize - padding.left - padding.right;
 		height = svgSize - padding.top - padding.bottom;
 		xScale = scaleLinear()
@@ -59,7 +59,7 @@
 
 <svelte:window />
 
-<svg bind:this={svg} style="width: {window.innerWidth * size}px; height: {window.innerWidth * size}px">
+<svg bind:this={svg} viewBox="0 0 {svgSize} {svgSize}" style="width: {window.innerWidth * size}px; height: {window.innerWidth * size}px">
 	{#if xScale && yScale && xTicks && yTicks}
 	<g class='axis y-axis'>
 		{#each yTicks as tick}
@@ -88,8 +88,9 @@
 
 <style>
 	svg {
-		width: 100%;
-		height: 100%;
+
+  margin: auto;
+  display: block;
 		float: left;
 	}
 
