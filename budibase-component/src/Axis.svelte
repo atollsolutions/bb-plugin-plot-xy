@@ -6,17 +6,18 @@
 	export let scale_ob;
 
 	let svg;
-	let size = 0.6;
-	let height =200;
-	let width  =200;
+	let size = 0.4;
+
 
 	const padding = { top: 20, right: 20, bottom: 5, left: 25 };
 	
 	let xScale, yScale, xTicks, yTicks;
-
+	
 	function calculateScales() {
 		let range = Math.max(scale_ob['max_x'] - scale_ob['min_x'], scale_ob['max_y'] - scale_ob['min_y']);
     let svgSize = window.innerWidth * size;
+	let width = svgSize - padding.left - padding.right;
+    let height = svgSize - padding.top - padding.bottom;
 		xScale = scaleLinear()
 			.domain([scale_ob['min_x'], scale_ob['max_x']])
 			.range([padding.left, width - padding.right]);
@@ -53,13 +54,10 @@
 		yTicks = null;
 	});
 
-	function resize() {
-		({ width, height } = svg.getBoundingClientRect());
-	}
 
 </script>
 
-<svelte:window on:resize="{resize}" />
+<svelte:window />
 
 <svg bind:this={svg} style="width: {window.innerWidth * size}px; height: {window.innerWidth * size}px">
 	{#if xScale && yScale && xTicks && yTicks}
