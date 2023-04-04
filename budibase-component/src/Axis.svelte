@@ -6,7 +6,7 @@
 	export let scale_ob;
 
 	let svg;
-	let size = 0.8;
+	let size = 0.6;
 	let height =200;
 	let width  =200;
 
