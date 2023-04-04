@@ -7,7 +7,7 @@
 
 	let svg;
 	let size = 0.4;
-
+	let width,height;
 
 	const padding = { top: 20, right: 20, bottom: 5, left: 25 };
 	
@@ -16,8 +16,8 @@
 	function calculateScales() {
 		let range = Math.max(scale_ob['max_x'] - scale_ob['min_x'], scale_ob['max_y'] - scale_ob['min_y']);
     let svgSize = window.innerWidth * size;
-	let width = svgSize - padding.left - padding.right;
-    let height = svgSize - padding.top - padding.bottom;
+		width = svgSize - padding.left - padding.right;
+		height = svgSize - padding.top - padding.bottom;
 		xScale = scaleLinear()
 			.domain([scale_ob['min_x'], scale_ob['max_x']])
 			.range([padding.left, width - padding.right]);
