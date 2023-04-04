@@ -7,6 +7,8 @@
 
 	let svg;
 	let size = 0.8;
+	let height =200;
+	let width  =200;
 
 	const padding = { top: 20, right: 20, bottom: 5, left: 25 };
 	
