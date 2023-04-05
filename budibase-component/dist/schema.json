@@ -1,0 +1,49 @@
+{
+  "type": "component",
+  "metadata": {},
+  "schema": {
+    "name": "plot-xy-static",
+    "friendlyName": "plot static",
+    "description": "An amazing Budibase component!",
+    "icon": "Menu",
+    "settings": [
+      {
+        "type": "dataProvider",
+        "label": "Static data provider",
+        "key": "dataProvider",
+        "required": true
+      },
+      {
+        "type": "text",
+        "label": "Title for the chart",
+        "key": "tc"
+      },
+      {
+        "type": "text",
+        "label": "Steps on x axis for static",
+        "key": "nodx"
+      },
+      {
+        "type": "text",
+        "label": "Steps on y axis for static",
+        "key": "nody"
+      },
+      {
+        "type": "field",
+        "label": "X axis column",
+        "key": "xaxis",
+        "required": true,
+        "defaultValue": "x"
+      },
+      {
+        "type": "field",
+        "label": "Y axis column",
+        "key": "yaxis",
+        "required": true,
+        "defaultValue": "y"
+      }
+    ]
+  },
+  "hash": "181d9f6aadaf64946f2fa302440496063782a304",
+  "version": "1.0.0"
+}
