@@ -2,13 +2,15 @@ Budibase Error
 The BB_ADMIN_USER_EMAIL variable is not set. Defaulting to a blank string.
 The BB_ADMIN_USER_PASSWORD variable is not set. Defaulting to a blank string.
 plotxystaticc_minio-service_1 is up-to-date
+plotxystaticc_watchtower-service_1 is up-to-date
 plotxystaticc_couchdb-service_1 is up-to-date
 plotxystaticc_redis-service_1 is up-to-date
-plotxystaticc_watchtower-service_1 is up-to-date
 Starting plotxystaticc_couch-init_1 ... 
-[1A[2KStarting plotxystaticc_couch-init_1 ... [32mdone[0m[1BRecreating bbworker2                ... 
-[1A[2KRecreating bbworker2                ... [31merror[0m[1B
-ERROR: for bbworker2  cannot stop container: c4c3a9bfecb7c073869a8cf4f01f454c45dd3642bd91e26d682444147911ed9e: permission denied
+[1A[2KStarting plotxystaticc_couch-init_1 ... [32mdone[0m[1Bbbworker is up-to-date
+Recreating 1c2a6fd716f2_bbapps2     ... 
+[1A[2KRecreating 1c2a6fd716f2_bbapps2     ... [32mdone[0m[1BRecreating bbproxy2                 ... 
+[1A[2KRecreating bbproxy2                 ... [31merror[0m[1B
+ERROR: for bbproxy2  Cannot create container for service proxy-service: Conflict. The container name "/bbproxy" is already in use by container "721a953e5459fec18db2240409aa39712b16930cafbfd4787379a6f7a4921784". You have to remove (or rename) that container to be able to reuse that name.
 
-ERROR: for worker-service  cannot stop container: c4c3a9bfecb7c073869a8cf4f01f454c45dd3642bd91e26d682444147911ed9e: permission denied
+ERROR: for proxy-service  Cannot create container for service proxy-service: Conflict. The container name "/bbproxy" is already in use by container "721a953e5459fec18db2240409aa39712b16930cafbfd4787379a6f7a4921784". You have to remove (or rename) that container to be able to reuse that name.
 Encountered errors while bringing up the project.

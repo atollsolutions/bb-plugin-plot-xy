@@ -45,7 +45,7 @@
 	});
 	onMount(() => {
 		calculateScales();
-		resize();
+		
 	});
 	onDestroy(() => {
 		xScale = null;
@@ -59,7 +59,7 @@
 
 <svelte:window />
 
-<svg bind:this={svg} viewBox="0 0 {svgSize} {svgSize}" style="width: {window.innerWidth * size}px; height: {window.innerWidth * size}px">
+<svg bind:this={svg}  style="width: {window.innerWidth * size}px; height: {window.innerWidth * size}px">
 	{#if xScale && yScale && xTicks && yTicks}
 	<g class='axis y-axis'>
 		{#each yTicks as tick}
