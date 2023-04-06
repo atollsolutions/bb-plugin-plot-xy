@@ -102,8 +102,8 @@ if( Data2.length>0 ){
 	.chart {
 	  width: 100%;
 	  height: 100%;
-	  min-height: 500px;
-	  max-height: 500px;
+	  
+	  
 	  margin: 16 16;
 	}
   </style>

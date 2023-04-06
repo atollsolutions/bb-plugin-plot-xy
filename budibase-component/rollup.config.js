@@ -11,8 +11,9 @@ import tar from "tar"
 import fs from "fs"
 import pkg from "./package.json"
 import crypto from "crypto"
+import livereload from "rollup-plugin-livereload" // import livereload
 import { validate } from "@budibase/backend-core/plugins"
-const production = !process.env.ROLLUP_WATCH;
+
 const ignoredWarnings = [
   "unused-export-let",
   "css-unused-selector",
@@ -117,6 +118,7 @@ export default {
       assets: ["schema.json", "package.json"],
     }),
     hash(),
+    livereload("public"),
     bundle(),
   ],
 }
