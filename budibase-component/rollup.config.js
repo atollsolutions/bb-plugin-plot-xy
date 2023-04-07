@@ -118,7 +118,7 @@ export default {
       assets: ["schema.json", "package.json"],
     }),
     hash(),
-    livereload("public"),
+  
     bundle(),
   ],
 }

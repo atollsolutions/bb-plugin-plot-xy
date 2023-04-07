@@ -9,7 +9,7 @@
 	let size = 0.4;
 	let width,height,svgSize;
 
-	const padding = { top: 20, right: 20, bottom: 5, left: 25 };
+	const padding = { top: 10, right: 10, bottom: 50, left: 50 };
 	
 	let xScale, yScale, xTicks, yTicks;
 	
@@ -61,7 +61,7 @@
 
 <svg bind:this={svg}  style="width: {window.innerWidth * size}px; height: {window.innerWidth * size}px">
 	{#if xScale && yScale && xTicks && yTicks}
-	<g class='axis y-axis'>
+	<g class='axis y-axis' >
 		{#each yTicks as tick}
 			<g class='tick tick-{tick}' transform='translate(0, {yScale(tick)})'>
 				<line x1='{padding.left}' x2='{xScale(scale_ob.max_x)}'/>
@@ -70,7 +70,7 @@
 		{/each}
 	</g>
 
-	<g class='axis x-axis'>
+	<g class='axis x-axis' >
 		{#each xTicks as tick}
 			<g class='tick' transform='translate({xScale(tick)},0)'>
 				<line y1='{yScale(0)}' y2='{yScale(scale_ob.max_y)}'/>
@@ -91,7 +91,7 @@
 
   margin: auto;
   display: block;
-		float: left;
+		float: center;
 	}
 
 	circle {
