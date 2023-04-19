@@ -37,6 +37,13 @@
       },
       {
         "type": "field",
+        "label": "time column",
+        "key": "tm",
+        "required": true,
+        "defaultValue": "x"
+      },
+      {
+        "type": "field",
         "label": "Y axis column",
         "key": "yaxis",
         "required": true,
@@ -44,6 +51,6 @@
       }
     ]
   },
-  "hash": "69f285a5d37d263ff5816e56d300fc2c6a60a06b",
+  "hash": "3b4149580fb8de3ff5b0ab88c3a90d31a377abe5",
   "version": "1.0.0"
 }

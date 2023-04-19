@@ -45,6 +45,13 @@
       },
       {
         "type": "field",
+        "label": "time column",
+        "key": "tm",
+        "required": true,
+        "defaultValue":"x"
+      },
+      {
+        "type": "field",
         "label": "Y axis column",
         "key": "yaxis",
         "required": true,

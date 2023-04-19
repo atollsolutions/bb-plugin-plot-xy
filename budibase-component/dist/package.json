@@ -12,6 +12,7 @@
   "dependencies": {
     "@crownframework/svelte-error-boundary": "^1.0.3",
     "d3-scale": "^4.0.2",
+    "d3-scale-chromatic": "^3.0.0",
     "rollup-plugin-livereload": "^2.0.5",
     "svelte": "^3.49.0"
   },
